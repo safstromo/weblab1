@@ -1,6 +1,8 @@
 let charSection: HTMLDivElement = document.querySelector("#charSection")!;
 const numberOfPages: number = 43;
 let currentPage = 1;
+const favorites: character[] = [];
+
 type character = {
   id: number;
   name: string;
@@ -90,12 +92,7 @@ function createH2Tag(char: character) {
 
 function createLikeBtn() {
   let btn = document.createElement("button");
-  let image = document.createElement("img");
-  btn.className = "fav center";
-  image.src = "heartfill.png";
-  image.alt = "heart";
-  image.className = "fav";
-  btn.appendChild(image);
+  btn.className = "favBtn center";
   return btn;
 }
 

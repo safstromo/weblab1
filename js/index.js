@@ -2,6 +2,7 @@
 let charSection = document.querySelector("#charSection");
 const numberOfPages = 43;
 let currentPage = 1;
+const favorites = [];
 // TODO pil för top of page
 // favoriter
 // css search
@@ -60,12 +61,7 @@ function createH2Tag(char) {
 }
 function createLikeBtn() {
     let btn = document.createElement("button");
-    let image = document.createElement("img");
-    btn.className = "fav center";
-    image.src = "heartfill.png";
-    image.alt = "heart";
-    image.className = "fav";
-    btn.appendChild(image);
+    btn.className = "favBtn center";
     return btn;
 }
 function createEpisodeTag(char) {
