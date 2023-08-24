@@ -21,6 +21,12 @@ type character = {
   url: string;
   created: Date;
 };
+// TODO pil för top of page
+// favoriter
+// css search
+//colors och css
+//media querys
+//form
 
 init(1);
 

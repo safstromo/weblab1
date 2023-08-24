@@ -2,6 +2,12 @@
 let charSection = document.querySelector("#charSection");
 const numberOfPages = 43;
 let currentPage = 1;
+// TODO pil för top of page
+// favoriter
+// css search
+//colors och css
+//media querys
+//form
 init(1);
 window.addEventListener("scroll", () => {
     const { scrollTop, scrollHeight, clientHeight } = document.documentElement;
