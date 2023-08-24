@@ -1,4 +1,3 @@
-"use strict";
 let charSection = document.querySelector("#charSection");
 const numberOfPages = 43;
 let currentPage = 1;
@@ -32,7 +31,7 @@ async function loadMoreCharacters(page) {
         createCharacterArticles(characters);
     }
 }
-function createCharacterArticles(characters) {
+export function createCharacterArticles(characters) {
     characters.forEach((char) => {
         let article = document.createElement("article");
         article.className = "box char";
@@ -85,7 +84,7 @@ function createImageTag(char) {
     image.className = "box imgchar";
     return image;
 }
-function addToFavorites(event, char) {
+export function addToFavorites(event, char) {
     console.log(event);
     console.log(char);
     favorites.push(char);

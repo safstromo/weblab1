@@ -3,7 +3,7 @@ const numberOfPages: number = 43;
 let currentPage = 1;
 const favorites: character[] = [];
 
-type character = {
+export type character = {
   id: number;
   name: string;
   status: string;
@@ -61,7 +61,7 @@ async function loadMoreCharacters(page: number) {
   }
 }
 
-function createCharacterArticles(characters: character[]) {
+export function createCharacterArticles(characters: character[]) {
   characters.forEach((char) => {
     let article = document.createElement("article");
     article.className = "box char";
@@ -121,7 +121,7 @@ function createImageTag(char: character) {
   return image;
 }
 
-function addToFavorites(event: Event, char: character) {
+export function addToFavorites(event: Event, char: character) {
   console.log(event);
   console.log(char);
   favorites.push(char);
