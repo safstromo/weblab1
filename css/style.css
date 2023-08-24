@@ -1,0 +1,88 @@
+@import url("https://fonts.googleapis.com/css2?family=Creepster&family=Roboto&display=swap");
+* {
+  box-sizing: border-box;
+  font-family: 'Roboto', sans-serif;
+}
+body {
+  display: flex;
+  flex-direction: column;
+  justify-items: center;
+  align-items: center;
+}
+.header {
+  display: flex;
+  background-color: #61dafd;
+  align-items: center;
+  flex-direction: column;
+  justify-content: center;
+  border-radius: 5px;
+  margin: 10px;
+  width: 90%;
+  height: 80px;
+  box-shadow: 10px 5px 5px gray;
+}
+h1 {
+  margin: 0px;
+  font-family: "Creepster", cursive;
+}
+
+.box {
+  border-radius: 5px;
+  background-color: lightgray;
+  box-shadow: 10px 5px 5px gray;
+}
+
+#charSection {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  justify-content: center;
+  width: 95%;
+}
+.char {
+  display: grid;
+  grid-template-areas:
+    "img head like"
+    "img epi .";
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr 1fr ;
+
+  width: 360px;
+  height: 165px;
+  margin-inline: 20px;
+  margin-top: 10px;
+}
+
+.episode {
+  grid-area: epi;
+  display: flex;
+  justify-content: start;
+}
+h2 {
+  grid-area: head;
+}
+.imgchar {
+  grid-area: img;
+  align-self: center;
+  width: 80%;
+  margin: 10px;
+}
+p {
+  margin: 2px;
+}
+.fav{
+  height: 20px;
+  width: 20px;
+  background-color: lightgray;
+  border: 0px;
+  grid-area: like;
+}
+.favBtn:hover{
+  content: url("heart.png");
+}
+.center{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 10px;
+}
