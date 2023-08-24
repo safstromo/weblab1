@@ -37,7 +37,7 @@ function createCharacterArticles(characters) {
         let article = document.createElement("article");
         article.className = "box char";
         article.appendChild(createImageTag(char));
-        article.appendChild(createLikeBtn());
+        article.appendChild(createLikeBtn(char));
         article.appendChild(createH2Tag(char));
         article.appendChild(createEpisodeTag(char));
         charSection.appendChild(article);
@@ -48,7 +48,7 @@ function create20Chars(characters) {
         let article = document.createElement("article");
         article.className = "box char";
         article.appendChild(createImageTag(characters[i]));
-        article.appendChild(createLikeBtn());
+        article.appendChild(createLikeBtn(characters[i]));
         article.appendChild(createH2Tag(characters[i]));
         article.appendChild(createEpisodeTag(characters[i]));
         charSection.appendChild(article);
@@ -59,8 +59,11 @@ function createH2Tag(char) {
     h2.innerText = char.name;
     return h2;
 }
-function createLikeBtn() {
+function createLikeBtn(char) {
     let btn = document.createElement("button");
+    btn.addEventListener("click", (event) => {
+        addToFavorites(event, char);
+    });
     btn.className = "favBtn center";
     return btn;
 }
@@ -81,4 +84,13 @@ function createImageTag(char) {
     image.alt = "character image";
     image.className = "box imgchar";
     return image;
+}
+function addToFavorites(event, char) {
+    console.log(event);
+    console.log(char);
+    favorites.push(char);
+    console.log(favorites);
+    let btn = event.target;
+    btn.style.backgroundImage = 'url("/img/heartfilled.png")';
+    localStorage.setItem("favorites", JSON.stringify(favorites));
 }
