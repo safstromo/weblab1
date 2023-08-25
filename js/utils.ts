@@ -88,3 +88,7 @@ function create20Chars(characters: character[], charSection: HTMLDivElement) {
     charSection.appendChild(article);
   }
 }
+
+export function goTop() {
+  document.documentElement.scrollTop = 0;
+}

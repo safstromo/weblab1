@@ -1,12 +1,10 @@
-import { character, createCharacterArticles } from "./utils.js";
+import { character, createCharacterArticles, goTop } from "./utils.js";
 
 let charSection: HTMLDivElement = document.querySelector("#charSection")!;
-
+let homeArrow: HTMLImageElement = document.querySelector("#homeArrow")!;
 const numberOfPages: number = 43;
 let currentPage = 1;
-//const favorites: character[] = [];
 // TODO pil för top of page
-// favoriter
 // css search
 //colors och css
 //media querys
@@ -14,6 +12,9 @@ let currentPage = 1;
 
 init(1);
 
+homeArrow.addEventListener("click", () => {
+  document.documentElement.scrollTop = 0;
+});
 window.addEventListener("scroll", () => {
   const { scrollTop, scrollHeight, clientHeight } = document.documentElement;
 

@@ -58,3 +58,6 @@ function create20Chars(characters, charSection) {
         charSection.appendChild(article);
     }
 }
+export function goTop() {
+    document.documentElement.scrollTop = 0;
+}

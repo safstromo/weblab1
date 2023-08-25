@@ -1,15 +1,17 @@
 import { createCharacterArticles } from "./utils.js";
 let charSection = document.querySelector("#charSection");
+let homeArrow = document.querySelector("#homeArrow");
 const numberOfPages = 43;
 let currentPage = 1;
-//const favorites: character[] = [];
 // TODO pil för top of page
-// favoriter
 // css search
 //colors och css
 //media querys
 //form
 init(1);
+homeArrow.addEventListener("click", () => {
+    document.documentElement.scrollTop = 0;
+});
 window.addEventListener("scroll", () => {
     const { scrollTop, scrollHeight, clientHeight } = document.documentElement;
     if (scrollTop + clientHeight >= scrollHeight - 10) {
