@@ -1,9 +1,8 @@
-import {createCharacterArticles, addToFavorites, character} from "index";
+import { character, createCharacterArticles } from "./utils.js";
 
-let favorites = localStorage.getItem("favorites")!;
+const charSection: HTMLDivElement = document.querySelector("#charSection")!;
+let favorites: character[] = JSON.parse(localStorage.getItem("favorites")!);
 
-console.log(favorites);
-
-
-
-
+if (favorites !== null) {
+  createCharacterArticles(favorites, charSection);
+}
