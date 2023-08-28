@@ -21,6 +21,7 @@ export function createH2Tag(char) {
 function createLikeBtn(char) {
     let btn = document.createElement("button");
     btn.addEventListener("click", (event) => {
+        event.stopPropagation();
         addToFavorites(event, char, favorites);
     });
     btn.className = "favBtn center";

@@ -4,12 +4,13 @@ let charSection: HTMLDivElement = document.querySelector("#charSection")!;
 let homeArrow: HTMLImageElement = document.querySelector("#homeArrow")!;
 const numberOfPages: number = 43;
 let currentPage = 1;
-// TODO pil för top of page
+// TODO pil för top of page CSS
 // css search
 //colors och css
 //media querys
-//form
-
+// css register
+// css charpage
+// css
 init(1);
 
 homeArrow.addEventListener("click", () => {

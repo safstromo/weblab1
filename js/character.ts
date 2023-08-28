@@ -13,6 +13,7 @@ const characterId = urlParams.get("id");
 async function createCharacter() {
   if (characterId) {
     const character = await getCharacter(parseInt(characterId));
+    characterSection.className = "charPageBox box";
     characterSection.appendChild(createImageTag(character));
     characterSection.appendChild(createH2Tag(character));
     characterSection.appendChild(createStatus(character));
