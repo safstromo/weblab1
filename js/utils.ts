@@ -26,15 +26,19 @@ export function createCharacterArticles(
 ) {
   characters.forEach((char) => {
     let article = document.createElement("article");
+    article.addEventListener("click", () => {
+      window.location.href = `character.html?id=${char.id}`;
+    });
+
     article.className = "box char";
     article.appendChild(createImageTag(char));
     article.appendChild(createLikeBtn(char));
     article.appendChild(createH2Tag(char));
-    article.appendChild(createEpisodeTag(char));
+    article.appendChild(createStatus(char));
     charSection.appendChild(article);
   });
 }
-function createH2Tag(char: character) {
+export function createH2Tag(char: character) {
   let h2 = document.createElement("h2");
   h2.innerText = char.name;
   return h2;
@@ -49,11 +53,11 @@ function createLikeBtn(char: character) {
   return btn;
 }
 
-function createEpisodeTag(char: character) {
+export function createStatus(char: character) {
   let div = document.createElement("div");
   let p1 = document.createElement("p");
   let p2 = document.createElement("p");
-  div.className = "episode";
+  div.className = "status";
   p1.innerText = "Status:";
   p2.innerText = char.status;
   div.appendChild(p1);
@@ -62,7 +66,7 @@ function createEpisodeTag(char: character) {
   return div;
 }
 
-function createImageTag(char: character) {
+export function createImageTag(char: character) {
   let image = document.createElement("img");
   image.src = char.image;
   image.alt = "character image";
@@ -76,17 +80,6 @@ function addToFavorites(event: Event, char: character, favorites: character[]) {
   let btn: HTMLButtonElement = event.target as HTMLButtonElement;
   btn.style.backgroundImage = 'url("/img/heartfilled.png")';
   localStorage.setItem("favorites", JSON.stringify(favorites));
-}
-function create20Chars(characters: character[], charSection: HTMLDivElement) {
-  for (let i = 0; i < 20; i++) {
-    let article = document.createElement("article");
-    article.className = "box char";
-    article.appendChild(createImageTag(characters[i]));
-    article.appendChild(createLikeBtn(characters[i]));
-    article.appendChild(createH2Tag(characters[i]));
-    article.appendChild(createEpisodeTag(characters[i]));
-    charSection.appendChild(article);
-  }
 }
 
 export function goTop() {

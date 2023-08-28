@@ -53,7 +53,7 @@ h1 {
   margin-top: 10px;
 }
 
-.episode {
+.status {
   grid-area: epi;
   display: flex;
   justify-content: start;
