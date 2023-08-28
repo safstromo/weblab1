@@ -118,9 +118,41 @@ display: flex;
   justify-content: center;
   flex-direction: column;
   width: 80%;
+}
 
+#signupForm{
+display: flex;
+  align-items: center;
+  justify-content: space-around;
+  flex-direction: column;
+  font-weight: bold;
+  width: 80%;
+  height: 200px;
+  max-width: 300px;
+} 
+.formInput{
+  border-radius: 5px;
+  width: 80%;
+  text-align: center;
+}
+
+.user{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+.user p{
+  color: white;
+  font-size: 30px
 
 }
+.user h2{
+  color: white;
+  font-size: 40px;
+}
+
+
 @media (min-width: 440px){
 #homeArrow{
     background-color: #fd61c8;
