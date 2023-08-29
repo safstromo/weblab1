@@ -206,8 +206,10 @@ display: flex;
   align-items: center;
   margin-right: 2%;
 }
-nav{
-  
+
+#headerImg{
+  width: 90%;
+  border-radius: 20px;
 }
 
 @media (min-width: 420px) {
@@ -218,7 +220,7 @@ nav{
   }
 }
 @media (max-width: 920px) {
-  nav {
+  #nav {
     display: none;
     flex-direction: column;
     width: 85%;
@@ -259,8 +261,12 @@ nav{
   .header{
     margin-left: 0;
   }
+  #headerImg{
+    display: none;
+  }
 }
 @media (max-width: 1200px) and  (min-width: 960px){
+ 
 .char{
     width: 400px;
   }
