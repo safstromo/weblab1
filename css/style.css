@@ -21,7 +21,7 @@ body {
   margin: 10px;
   width: 90%;
   margin-left: 5%;
-  height: 80px;
+  height: 120px;
   box-shadow: 10px 5px 5px black;
 }
 h1 {
@@ -118,7 +118,7 @@ p {
   font-size: 16px;
   opacity: 95%;
   background-color: #fde261;
-  width: 85%;
+  width: 400px;
   height: 30px;
   border: 0;
 }
@@ -198,19 +198,20 @@ p {
   flex-direction: column;
   width: 150px;
   margin: 10px;
+  margin-right: -60%;
 }
-#topRight{
-display: flex;
-  flex-direction: row-reverse;
-  justify-content: center;
-  align-items: center;
-  margin-right: 2%;
-}
-
-#headerImg{
+#headerImg {
   width: 90%;
   border-radius: 20px;
 }
+#topRight{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-right: 5%;
+}
+
 
 @media (min-width: 420px) {
   #homeArrow {
@@ -227,9 +228,10 @@ display: flex;
     margin-top: -10px;
     margin-bottom: 3px;
   }
-  .topNav{
+  .topNav {
     width: 85%;
     margin: 2px;
+  margin-right: 0;
   }
   #menuIcon {
     display: block;
@@ -251,32 +253,35 @@ display: flex;
     align-items: center;
     width: 100%;
   }
-  #topRight{
+  #topRight {
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     width: 100%;
+    margin-right: 0;
   }
-  .header{
+  .header {
     margin-left: 0;
+    height: 80px;
   }
-  #headerImg{
+  #headerImg {
     display: none;
   }
+  #searchbar{
+    width: 85%;
+  }
 }
-@media (max-width: 1200px) and  (min-width: 960px){
- 
-.char{
+@media (max-width: 1200px) and (min-width: 960px) {
+  .char {
     width: 400px;
   }
-  #charSection{
+  #charSection {
+
     justify-content: space-evenly;
   }
-  .header{
+  .header {
     margin-left: 10%;
   }
-  #searchbar{
-    width: 250px;
-  }
+  
 }
