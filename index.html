@@ -12,21 +12,35 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   </head>
   <body>
-    <header class="header">
-      <div class="headerText"><h1>The Rick and Morty</h1>
-      <h1>character db</h1></div>
-    <img id="menuIcon" src="img/menu.png" alt="menu icon">
-    </header>
-        <nav id="nav">
-      <button id="signupBtn" class="menuBtn box" onclick="window.location.href='signup.html'">
-        Sign up
-      </button>
-      <button id="favorites" class="menuBtn box" onclick="window.location.href='favorites.html'">
-        my favs
-      </button>
-    </nav>
-   <input id="searchbar" class="box" type="text" value="Search" />
-   <img src="img/arrowHome.png" alt="arrow to top of page" id="homeArrow" />
+    <section id="topSection">
+      <header class="header">
+        <div class="headerText">
+          <h1>The Rick and Morty</h1>
+          <h1>character db</h1>
+        </div>
+        <img id="menuIcon" src="img/menu.png" alt="menu icon" />
+      </header>
+      <div id="topRight">
+        <nav id="nav" class="topNav">
+          <button
+            id="favorites"
+            class="menuBtn box"
+            onclick="window.location.href='favorites.html'"
+          >
+            my favs
+          </button>
+          <button
+            id="signupBtn"
+            class="menuBtn box"
+            onclick="window.location.href='signup.html'"
+          >
+            Sign up
+          </button>
+        </nav>
+        <input id="searchbar" class="box" type="text" value="Search" />
+      </div>
+    </section>
+    <img src="img/arrowHome.png" alt="arrow to top of page" id="homeArrow" />
     <div id="charSection"></div>
     <script src="js/index.js" type="module"></script>
     <script src="js/utils.js" type="module"></script>
