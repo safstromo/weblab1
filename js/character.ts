@@ -1,6 +1,6 @@
 import {
   character,
-  createH2Tag,
+  createH3,
   createImageTag,
   createStatus,
 } from "./utils.js";
@@ -15,7 +15,7 @@ async function createCharacter() {
     const character = await getCharacter(parseInt(characterId));
     characterSection.className = "charPageBox box";
     characterSection.appendChild(createImageTag(character));
-    characterSection.appendChild(createH2Tag(character));
+    characterSection.appendChild(createH3(character));
     characterSection.appendChild(createStatus(character));
     // todo add more info
     //

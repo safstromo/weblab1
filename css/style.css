@@ -60,9 +60,19 @@ h1 {
   grid-area: epi;
   display: flex;
   justify-content: start;
+  margin-top: 5px;
 }
 h2 {
+  color: white;
+}
+h3{
   grid-area: head;
+}
+.charText{
+ display: flex;
+  justify-content: end;
+  flex-direction: column;
+  margin-bottom: 5px;
 }
 .imgchar {
   grid-area: img;

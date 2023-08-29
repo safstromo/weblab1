@@ -33,15 +33,16 @@ export function createCharacterArticles(
     article.className = "box char";
     article.appendChild(createImageTag(char));
     article.appendChild(createLikeBtn(char));
-    article.appendChild(createH2Tag(char));
+    article.appendChild(createH3(char));
     article.appendChild(createStatus(char));
     charSection.appendChild(article);
   });
 }
-export function createH2Tag(char: character) {
-  let h2 = document.createElement("h2");
-  h2.innerText = char.name;
-  return h2;
+export function createH3(char: character) {
+  let h3 = document.createElement("h3");
+  h3.innerText = char.name;
+  h3.className = "charText";
+  return h3;
 }
 
 function createLikeBtn(char: character) {

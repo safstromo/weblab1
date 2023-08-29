@@ -1,4 +1,4 @@
-import { createH2Tag, createImageTag, createStatus, } from "./utils.js";
+import { createH3, createImageTag, createStatus, } from "./utils.js";
 const characterSection = document.querySelector("#character");
 const urlParams = new URLSearchParams(window.location.search);
 const characterId = urlParams.get("id");
@@ -7,7 +7,7 @@ async function createCharacter() {
         const character = await getCharacter(parseInt(characterId));
         characterSection.className = "charPageBox box";
         characterSection.appendChild(createImageTag(character));
-        characterSection.appendChild(createH2Tag(character));
+        characterSection.appendChild(createH3(character));
         characterSection.appendChild(createStatus(character));
         // todo add more info
         //
