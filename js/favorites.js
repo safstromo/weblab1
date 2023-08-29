@@ -1,4 +1,5 @@
-import { createCharacterArticles } from "./utils.js";
+import { createCharacterArticles, navMenu } from "./utils.js";
+let menuIcon = document.querySelector("#menuIcon");
 const homeArrow = document.querySelector("#homeArrow");
 const charSection = document.querySelector("#charSection");
 let favorites = JSON.parse(localStorage.getItem("favorites"));
@@ -7,4 +8,7 @@ if (favorites !== null) {
 }
 homeArrow.addEventListener("click", () => {
     document.documentElement.scrollTop = 0;
+});
+menuIcon.addEventListener("click", () => {
+    navMenu();
 });

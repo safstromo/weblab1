@@ -55,3 +55,12 @@ function addToFavorites(event, char, favorites) {
 export function goTop() {
     document.documentElement.scrollTop = 0;
 }
+export function navMenu() {
+    let menu = document.querySelector("#nav");
+    if (menu.style.display === "flex") {
+        menu.style.display = "none";
+    }
+    else {
+        menu.style.display = "flex";
+    }
+}

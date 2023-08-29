@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!doctype html>
 
 <html lang="en">
   <head>
@@ -13,13 +13,29 @@
   </head>
   <body>
     <header class="header">
-      <a class="headerLink" href="index.html"
+      <a class="headerLink headerText" href="index.html"
         ><h1>The Rick and Morty</h1>
         <h1>character db</h1></a
       >
+      <img id="menuIcon" src="img/menu.png" alt="menu icon" />
     </header>
+    <nav id="nav">
+      <button
+        id="signupBtn"
+        class="menuBtn box"
+        onclick="window.location.href='signup.html'"
+      >
+        Sign up
+      </button>
+      <button
+        id="favorites"
+        class="menuBtn box"
+        onclick="window.location.href='favorites.html'"
+      >
+        my favs
+      </button>
+    </nav>
     <input id="searchbar" class="box" type="text" value="Search" />
-    <h2>Favorites</h2>
     <img src="img/arrowHome.png" alt="arrow to top of page" id="homeArrow" />
     <div id="charSection"></div>
     <script src="js/favorites.js" type="module"></script>

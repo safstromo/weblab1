@@ -1,4 +1,5 @@
-import { createH3, createImageTag, createStatus, } from "./utils.js";
+import { createH3, createImageTag, createStatus, navMenu, } from "./utils.js";
+let menuIcon = document.querySelector("#menuIcon");
 const characterSection = document.querySelector("#character");
 const urlParams = new URLSearchParams(window.location.search);
 const characterId = urlParams.get("id");
@@ -21,4 +22,7 @@ async function getCharacter(characterId) {
     const characterData = await response.json();
     return characterData;
 }
+menuIcon.addEventListener("click", () => {
+    navMenu();
+});
 createCharacter();

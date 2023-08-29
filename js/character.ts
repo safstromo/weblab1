@@ -3,8 +3,10 @@ import {
   createH3,
   createImageTag,
   createStatus,
+  navMenu,
 } from "./utils.js";
 
+let menuIcon: HTMLImageElement = document.querySelector("#menuIcon")!;
 const characterSection: HTMLDivElement = document.querySelector("#character")!;
 
 const urlParams = new URLSearchParams(window.location.search);
@@ -31,5 +33,8 @@ async function getCharacter(characterId: number): Promise<character> {
   const characterData = await response.json();
   return characterData as character;
 }
+menuIcon.addEventListener("click", () => {
+  navMenu();
+});
 
 createCharacter();

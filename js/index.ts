@@ -1,16 +1,15 @@
-import { character, createCharacterArticles, goTop } from "./utils.js";
+import { character, createCharacterArticles, goTop, navMenu } from "./utils.js";
 
 let charSection: HTMLDivElement = document.querySelector("#charSection")!;
 let homeArrow: HTMLImageElement = document.querySelector("#homeArrow")!;
+let menuIcon: HTMLImageElement = document.querySelector("#menuIcon")!;
 const numberOfPages: number = 43;
 let currentPage = 1;
-// TODO hamburger till mobil
-// 
 //
 //media querys
-// Signup: css h2, header, validering  
+// Signup: css h2, header, validering css knapp gul
 // charpage: css, mer info
-// 
+//
 init(1);
 
 homeArrow.addEventListener("click", () => {
@@ -23,6 +22,10 @@ window.addEventListener("scroll", () => {
     currentPage++;
     loadMoreCharacters(currentPage);
   }
+});
+
+menuIcon.addEventListener("click", () => {
+  navMenu();
 });
 
 async function init(page: number) {
