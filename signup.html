@@ -12,16 +12,44 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   </head>
   <body>
-    <header class="header">
-      <a class="headerLink" href="index.html"
-        ><h1>The Rick and Morty</h1>
-        <h1>character db</h1></a
-      >
-    </header>
+    <section id="topSection">
+      <header class="header">
+        <a class="headerLink headerText" href="index.html"
+          ><h1>The Rick and Morty</h1>
+          <h1>character db</h1></a
+        >
+        <img id="menuIcon" src="img/menu.png" alt="menu icon" />
+      </header>
+      <div id="topRight">
+        <nav id="nav" class="topNav">
+          <button
+            id="favorites"
+            class="menuBtn box"
+            onclick="window.location.href='favorites.html'"
+          >
+            my favs
+          </button>
+          <button
+            id="signupBtn"
+            class="menuBtn box"
+            onclick="window.location.href='signup.html'"
+          >
+            Sign up
+          </button>
+        </nav>
+        <input id="searchbar" class="box" type="text" value="Search" />
+      </div>
+    </section>
     <h2>Signup</h2>
     <form id="signupForm" class="box">
       <label for="username">Username</label>
-      <input class="formInput" id="username" type="text" name="username" required />
+      <input
+        class="formInput"
+        id="username"
+        type="text"
+        name="username"
+        required
+      />
       <label for="password">Password</label>
       <input
         id="password"
@@ -36,8 +64,7 @@
       <input class="formInput" id="mail" type="email" name="mail" required />
       <input type="submit" id="submitBtn" />
     </form>
-    <section id="users"> 
-    </section>
-    <script src="js/signup.js"></script>
+    <section id="users"></section>
+    <script src="js/signup.js" type="module"></script>
   </body>
 </html>

@@ -1,3 +1,6 @@
+import { navMenu } from "./utils.js";
+
+let menuIcon: HTMLImageElement = document.querySelector("#menuIcon")!;
 const userSection: HTMLDivElement = document.querySelector("#users")!;
 const users: user[] = [];
 
@@ -11,6 +14,9 @@ const signupForm: HTMLFormElement = document.querySelector("#signupForm")!;
 const submitBtn: HTMLButtonElement = document.querySelector("#submitBtn")!;
 
 submitBtn.addEventListener("click", addUser);
+menuIcon.addEventListener("click", () => {
+  navMenu();
+});
 
 function addUser(event: Event) {
   event.preventDefault();

@@ -1,9 +1,13 @@
-"use strict";
+import { navMenu } from "./utils.js";
+let menuIcon = document.querySelector("#menuIcon");
 const userSection = document.querySelector("#users");
 const users = [];
 const signupForm = document.querySelector("#signupForm");
 const submitBtn = document.querySelector("#submitBtn");
 submitBtn.addEventListener("click", addUser);
+menuIcon.addEventListener("click", () => {
+    navMenu();
+});
 function addUser(event) {
     event.preventDefault();
     userSection.innerHTML = "";
