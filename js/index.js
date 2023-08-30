@@ -5,7 +5,6 @@ const homeArrow = document.querySelector("#homeArrow");
 const menuIcon = document.querySelector("#menuIcon");
 const numberOfPages = 43;
 let currentPage = 1;
-// charpage: css, mer info
 init(1);
 homeArrow.addEventListener("click", () => {
     document.documentElement.scrollTop = 0;

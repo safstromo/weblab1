@@ -133,6 +133,7 @@ p {
   flex-direction: column;
   width: 80%;
   margin: 10px;
+  max-width: 960px;
 }
 
 #signupForm {
@@ -207,33 +208,32 @@ p {
   width: 90%;
   border-radius: 20px;
 }
-#topRight{
+#topRight {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   margin-right: 5%;
 }
-.formLabel{
-font-size: 16px;
+.formLabel {
+  font-size: 16px;
   margin: 3px;
-
 }
-.episodes{
+.episodes {
   display: flex;
-flex-direction: column;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
 }
-.episodeList{
+.episodeList {
   display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: space-around;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
   list-style: none;
   margin-top: -10px;
 }
-li{
+li {
   margin-right: 40px;
 }
 @media (min-width: 420px) {
@@ -254,7 +254,7 @@ li{
   .topNav {
     width: 85%;
     margin: 2px;
-  margin-right: 0;
+    margin-right: 0;
   }
   #menuIcon {
     display: block;
@@ -291,7 +291,7 @@ li{
   #headerImg {
     display: none;
   }
-  #searchbar{
+  #searchbar {
     width: 85%;
   }
 }
@@ -300,11 +300,9 @@ li{
     width: 400px;
   }
   #charSection {
-
     justify-content: space-evenly;
   }
   .header {
     margin-left: 10%;
   }
-  
 }

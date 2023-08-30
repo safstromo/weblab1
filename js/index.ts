@@ -6,7 +6,7 @@ const homeArrow: HTMLImageElement = document.querySelector("#homeArrow")!;
 const menuIcon: HTMLImageElement = document.querySelector("#menuIcon")!;
 const numberOfPages: number = 43;
 let currentPage = 1;
-// charpage: css, mer info
+
 init(1);
 
 homeArrow.addEventListener("click", () => {
