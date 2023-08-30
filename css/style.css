@@ -62,6 +62,9 @@ h1 {
   grid-area: epi;
   display: flex;
   justify-content: start;
+  align-items: center;
+  margin-top: -10px;
+  height: 35px;
 }
 h2 {
   color: white;
@@ -216,8 +219,23 @@ font-size: 16px;
   margin: 3px;
 
 }
-
-
+.episodes{
+  display: flex;
+flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.episodeList{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+  list-style: none;
+  margin-top: -10px;
+}
+li{
+  margin-right: 40px;
+}
 @media (min-width: 420px) {
   #homeArrow {
     background-color: #fd61c8;

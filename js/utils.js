@@ -30,12 +30,12 @@ function createLikeBtn(char) {
 }
 export function createStatus(char) {
     let div = document.createElement("div");
-    let p1 = document.createElement("p");
+    let h4 = document.createElement("h4");
     let p2 = document.createElement("p");
     div.className = "status";
-    p1.innerText = "Status:";
+    h4.innerText = "Status:";
     p2.innerText = char.status;
-    div.appendChild(p1);
+    div.appendChild(h4);
     div.appendChild(p2);
     return div;
 }
@@ -48,23 +48,23 @@ export function createImageTag(char) {
 }
 export function createSpecies(char) {
     let div = document.createElement("div");
-    let p1 = document.createElement("p");
+    let h4 = document.createElement("h4");
     let p2 = document.createElement("p");
     div.className = "status";
-    p1.innerText = "Species:";
+    h4.innerText = "Species:";
     p2.innerText = char.species;
-    div.appendChild(p1);
+    div.appendChild(h4);
     div.appendChild(p2);
     return div;
 }
 export function createLocation(char) {
     let div = document.createElement("div");
-    let p1 = document.createElement("p");
+    let h4 = document.createElement("h4");
     let p2 = document.createElement("p");
     div.className = "status";
-    p1.innerText = "Last known location:";
+    h4.innerText = "Last known location:";
     p2.innerText = char.location.name;
-    div.appendChild(p1);
+    div.appendChild(h4);
     div.appendChild(p2);
     return div;
 }
