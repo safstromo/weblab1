@@ -211,6 +211,11 @@ p {
   align-items: center;
   margin-right: 5%;
 }
+.formLabel{
+font-size: 16px;
+  margin: 3px;
+
+}
 
 
 @media (min-width: 420px) {

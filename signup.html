@@ -42,15 +42,15 @@
     </section>
     <h2>Signup</h2>
     <form id="signupForm" class="box">
-      <label for="username">Username</label>
+      <label for="username" class="formLabel">Username</label>
       <input
-        class="formInput"
+        class="formInput menuBtn box"
         id="username"
         type="text"
         name="username"
         required
       />
-      <label for="password">Password</label>
+      <label for="password" class="formLabel">Password</label>
       <input
         id="password"
         type="password"
@@ -58,11 +58,11 @@
         required
         pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}"
         title="Must contain at least one  number and one uppercase and lowercase letter, and at least 8 or more characters"
-        class="formInput"
+        class="formInput menuBtn box"
       />
-      <label for="mail">E-mail</label>
-      <input class="formInput" id="mail" type="email" name="mail" required />
-      <input type="submit" id="submitBtn" />
+      <label for="mail" class="formLabel">E-mail</label>
+      <input class="formInput menuBtn box" id="mail" type="email" name="mail" required />
+      <input type="submit" class="menuBtn box" id="submitBtn" />
     </form>
     <section id="users"></section>
     <script src="js/signup.js" type="module"></script>

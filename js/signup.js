@@ -1,27 +1,33 @@
 import { navMenu } from "./utils.js";
 let menuIcon = document.querySelector("#menuIcon");
 const userSection = document.querySelector("#users");
-const users = [];
 const signupForm = document.querySelector("#signupForm");
-const submitBtn = document.querySelector("#submitBtn");
-submitBtn.addEventListener("click", addUser);
+signupForm.addEventListener("submit", addUser);
 menuIcon.addEventListener("click", () => {
     navMenu();
 });
 function addUser(event) {
-    event.preventDefault();
     userSection.innerHTML = "";
     const username = document.querySelector("#username");
     const password = document.querySelector("#password");
     const mail = document.querySelector("#mail");
+    if (username.value.trim() === "" ||
+        password.value.trim() === "" ||
+        mail.value.trim() === "") {
+        alert("All fields are required.");
+        return;
+    }
+    if (!password.value.match(/(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}$/)) {
+        alert("Password must contain at least one number, one uppercase letter, one lowercase letter, and be at least 8 characters long.");
+        return;
+    }
     let newUser = {
         username: username.value,
         password: password.value,
         email: mail.value,
     };
-    if (newUser.username !== "" && newUser.password !== "" && newUser.email !== "") {
-        createUserTag(newUser);
-    }
+    createUserTag(newUser);
+    event.preventDefault();
 }
 function createUserTag(user) {
     let userElement = document.createElement("div");

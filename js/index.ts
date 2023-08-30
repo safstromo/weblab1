@@ -6,10 +6,9 @@ let menuIcon: HTMLImageElement = document.querySelector("#menuIcon")!;
 const numberOfPages: number = 43;
 let currentPage = 1;
 //
-//media querys
 // Signup: css h2, header, validering css knapp gul
 // charpage: css, mer info
-//
+// search
 init(1);
 
 homeArrow.addEventListener("click", () => {
