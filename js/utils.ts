@@ -95,3 +95,14 @@ export function navMenu() {
     menu.style.display = "flex";
   }
 }
+export function search(
+  charArray: character[],
+  divElement: HTMLDivElement,
+  searchString: string,
+) {
+  let search = charArray.filter((char) =>
+    char.name.toLowerCase().match(searchString.toLowerCase())
+  );
+  divElement.innerHTML = "";
+  createCharacterArticles(search, divElement);
+}

@@ -5,8 +5,6 @@ let homeArrow: HTMLImageElement = document.querySelector("#homeArrow")!;
 let menuIcon: HTMLImageElement = document.querySelector("#menuIcon")!;
 const numberOfPages: number = 43;
 let currentPage = 1;
-//
-// Signup: css h2, header, validering css knapp gul
 // charpage: css, mer info
 // search
 init(1);
