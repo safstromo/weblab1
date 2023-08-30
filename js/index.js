@@ -1,11 +1,11 @@
 import { createCharacterArticles, navMenu } from "./utils.js";
-let charSection = document.querySelector("#charSection");
-let homeArrow = document.querySelector("#homeArrow");
-let menuIcon = document.querySelector("#menuIcon");
+const searchbar = document.querySelector("#searchbar");
+const charSection = document.querySelector("#charSection");
+const homeArrow = document.querySelector("#homeArrow");
+const menuIcon = document.querySelector("#menuIcon");
 const numberOfPages = 43;
 let currentPage = 1;
 // charpage: css, mer info
-// search
 init(1);
 homeArrow.addEventListener("click", () => {
     document.documentElement.scrollTop = 0;
@@ -30,8 +30,40 @@ async function getCharacters(page) {
     return chars.results;
 }
 async function loadMoreCharacters(page) {
-    if (page < numberOfPages) {
-        const characters = await getCharacters(page);
-        createCharacterArticles(characters, charSection);
+    if (searchbar.value === "Search" || searchbar.value === "") {
+        if (page < numberOfPages) {
+            const characters = await getCharacters(page);
+            createCharacterArticles(characters, charSection);
+        }
     }
+}
+searchbar.addEventListener("click", () => {
+    if (searchbar.value === "Search") {
+        searchbar.value = "";
+    }
+});
+searchbar.addEventListener("input", async () => {
+    let searchResult = await getCharacterSearch(searchbar.value);
+    charSection.innerHTML = "";
+    createCharacterArticles(searchResult, charSection);
+});
+async function getCharacterSearch(searchString) {
+    let searchResult = [];
+    let response = await fetch("https://rickandmortyapi.com/api/character/?page=1&name=" + searchString);
+    if (!response.ok) {
+        console.log("No match");
+        return searchResult;
+    }
+    const result = await response.json();
+    result.results.forEach((char) => {
+        searchResult.push(char);
+    });
+    for (let i = 1; i < result.info.pages; i++) {
+        let response = await fetch(`https://rickandmortyapi.com/api/character/?page=${i}&name=${searchString}`);
+        let result = await response.json();
+        result.results.forEach((char) => {
+            searchResult.push(char);
+        });
+    }
+    return searchResult;
 }

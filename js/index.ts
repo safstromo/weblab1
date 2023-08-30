@@ -1,12 +1,12 @@
-import { character, createCharacterArticles, goTop, navMenu } from "./utils.js";
+import { character, createCharacterArticles, navMenu } from "./utils.js";
 
-let charSection: HTMLDivElement = document.querySelector("#charSection")!;
-let homeArrow: HTMLImageElement = document.querySelector("#homeArrow")!;
-let menuIcon: HTMLImageElement = document.querySelector("#menuIcon")!;
+const searchbar: HTMLInputElement = document.querySelector("#searchbar")!;
+const charSection: HTMLDivElement = document.querySelector("#charSection")!;
+const homeArrow: HTMLImageElement = document.querySelector("#homeArrow")!;
+const menuIcon: HTMLImageElement = document.querySelector("#menuIcon")!;
 const numberOfPages: number = 43;
 let currentPage = 1;
 // charpage: css, mer info
-// search
 init(1);
 
 homeArrow.addEventListener("click", () => {
@@ -39,8 +39,47 @@ async function getCharacters(page: number): Promise<character[]> {
 }
 
 async function loadMoreCharacters(page: number) {
-  if (page < numberOfPages) {
-    const characters = await getCharacters(page);
-    createCharacterArticles(characters, charSection);
+  if (searchbar.value === "Search" || searchbar.value === "") {
+    if (page < numberOfPages) {
+      const characters = await getCharacters(page);
+      createCharacterArticles(characters, charSection);
+    }
   }
+}
+searchbar.addEventListener("click", () => {
+  if (searchbar.value === "Search") {
+    searchbar.value = "";
+  }
+});
+
+searchbar.addEventListener("input", async () => {
+  let searchResult: character[] = await getCharacterSearch(searchbar.value);
+  charSection.innerHTML = "";
+  createCharacterArticles(searchResult, charSection);
+});
+
+async function getCharacterSearch(searchString: string): Promise<character[]> {
+  let searchResult: character[] = [];
+  let response = await fetch(
+    "https://rickandmortyapi.com/api/character/?page=1&name=" + searchString,
+  );
+  if (!response.ok) {
+    console.log("No match");
+    return searchResult;
+  }
+  const result = await response.json();
+  result.results.forEach((char: character) => {
+    searchResult.push(char);
+  });
+
+  for (let i = 1; i < result.info.pages; i++) {
+    let response = await fetch(
+      `https://rickandmortyapi.com/api/character/?page=${i}&name=${searchString}`,
+    );
+    let result = await response.json();
+    result.results.forEach((char: character) => {
+      searchResult.push(char);
+    });
+  }
+  return searchResult;
 }

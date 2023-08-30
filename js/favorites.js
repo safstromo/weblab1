@@ -1,4 +1,4 @@
-import { search, createCharacterArticles, navMenu } from "./utils.js";
+import { createCharacterArticles, navMenu, search, } from "./utils.js";
 const menuIcon = document.querySelector("#menuIcon");
 const homeArrow = document.querySelector("#homeArrow");
 const charSection = document.querySelector("#charSection");

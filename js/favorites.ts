@@ -1,4 +1,9 @@
-import { search, character, createCharacterArticles, navMenu } from "./utils.js";
+import {
+  character,
+  createCharacterArticles,
+  navMenu,
+  search,
+} from "./utils.js";
 
 const menuIcon: HTMLImageElement = document.querySelector("#menuIcon")!;
 const homeArrow: HTMLImageElement = document.querySelector("#homeArrow")!;
@@ -26,5 +31,3 @@ searchbar.addEventListener("click", () => {
 searchbar.addEventListener("input", () => {
   search(favorites, charSection, searchbar.value);
 });
-
-
