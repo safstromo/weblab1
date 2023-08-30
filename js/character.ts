@@ -3,7 +3,10 @@ import {
   createH3,
   createImageTag,
   createStatus,
+  createSpecies,
   navMenu,
+  createLocation,
+  createEpisode,
 } from "./utils.js";
 
 let menuIcon: HTMLImageElement = document.querySelector("#menuIcon")!;
@@ -19,8 +22,9 @@ async function createCharacter() {
     characterSection.appendChild(createImageTag(character));
     characterSection.appendChild(createH3(character));
     characterSection.appendChild(createStatus(character));
-    // todo add more info
-    //
+    characterSection.appendChild(createSpecies(character));
+    characterSection.appendChild(createLocation(character));
+    characterSection.appendChild(await createEpisode(character))
   } else {
     characterSection.innerText = "No character ID.";
   }

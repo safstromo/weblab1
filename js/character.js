@@ -1,4 +1,4 @@
-import { createH3, createImageTag, createStatus, navMenu, } from "./utils.js";
+import { createH3, createImageTag, createStatus, createSpecies, navMenu, createLocation, createEpisode, } from "./utils.js";
 let menuIcon = document.querySelector("#menuIcon");
 const characterSection = document.querySelector("#character");
 const urlParams = new URLSearchParams(window.location.search);
@@ -10,8 +10,9 @@ async function createCharacter() {
         characterSection.appendChild(createImageTag(character));
         characterSection.appendChild(createH3(character));
         characterSection.appendChild(createStatus(character));
-        // todo add more info
-        //
+        characterSection.appendChild(createSpecies(character));
+        characterSection.appendChild(createLocation(character));
+        characterSection.appendChild(await createEpisode(character));
     }
     else {
         characterSection.innerText = "No character ID.";

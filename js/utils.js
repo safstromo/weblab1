@@ -46,6 +46,54 @@ export function createImageTag(char) {
     image.className = "box imgchar";
     return image;
 }
+export function createSpecies(char) {
+    let div = document.createElement("div");
+    let p1 = document.createElement("p");
+    let p2 = document.createElement("p");
+    div.className = "status";
+    p1.innerText = "Species:";
+    p2.innerText = char.species;
+    div.appendChild(p1);
+    div.appendChild(p2);
+    return div;
+}
+export function createLocation(char) {
+    let div = document.createElement("div");
+    let p1 = document.createElement("p");
+    let p2 = document.createElement("p");
+    div.className = "status";
+    p1.innerText = "Last known location:";
+    p2.innerText = char.location.name;
+    div.appendChild(p1);
+    div.appendChild(p2);
+    return div;
+}
+export async function createEpisode(char) {
+    let div = document.createElement("div");
+    let h4 = document.createElement("h4");
+    div.className = "episodes";
+    h4.innerText = "Episodes:";
+    div.appendChild(h4);
+    div = await createEpisodes(char, div);
+    return div;
+}
+async function createEpisodes(char, parentDiv) {
+    let list = document.createElement("ul");
+    list.className = "episodeList";
+    for (const episode of char.episode) {
+        let name = await getEpisodeName(new URL(episode));
+        let item = document.createElement("li");
+        item.innerText = name;
+        list.appendChild(item);
+    }
+    parentDiv.appendChild(list);
+    return parentDiv;
+}
+async function getEpisodeName(url) {
+    let response = await fetch(url);
+    let episodeData = await response.json();
+    return episodeData.episode;
+}
 function addToFavorites(event, char, favorites) {
     favorites.push(char);
     let btn = event.target;
