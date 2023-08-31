@@ -2,9 +2,9 @@
 
 First webdev lab on ITHS, create a responsive website with HTML, CSS and JS/TS.
 
+![Screenshot from 2023-08-31 08-46-00](https://github.com/safstromo/weblab1/assets/56272436/aa5cac66-0901-45e5-9db2-ceeadbac7448)
 
-![Screenshot from 2023-08-31 08-46-00](https://github.com/safstromo/weblab1/assets/56272436/3e9403c7-cbb7-4e5a-b707-81c6e0281390) 
-![Screenshot from 2023-08-31 08-12-23](https://github.com/safstromo/weblab1/assets/56272436/611fb91e-454a-438b-892e-c13e04b6e49c)
+![Screenshot from 2023-08-31 08-12-23](https://github.com/safstromo/weblab1/assets/56272436/bfdd83d0-3ac4-4809-a0e8-a22ee16bac76)
 
 
 
